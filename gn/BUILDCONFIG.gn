@@ -46,12 +46,8 @@ declare_args() {
   min_watchos_version = "2.0"
   min_macos_version = "10.8"
   min_maccatalyst_version = "13.0"
+  is_debug = false
 }
-declare_args() {
-  is_debug = !is_official_build
-}
-
-assert(!(is_debug && is_official_build))
 
 if (target_cpu == "wasm") {
   target_os = "wasm"
@@ -228,6 +224,9 @@ if (!is_debug) {
     "//gn:optimize",
     "//gn:NDEBUG",
   ]
+}
+if (is_debug) {
+  default_configs += [ "//gn:debug_symbols" ]
 }
 if (!is_official_build) {
   default_configs += [

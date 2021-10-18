@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+includedir=/usr/local/include/skia_loftwing
+libdir=/usr/local/lib
+
+Name: Skia
+Description: Skia is a complete 2D graphic library for drawing Text, Geometries, and Images.
+Version: main
+URL: https://skia.org/
+Requires.private:  harfbuzz harfbuzz-subset harfbuzz-icu icu-i18n icu-uc freetype2 libjpeg libpng libwebp libwebpdemux zlib
+Libs: -L${libdir} -lskia_loftwing -ljpeg -lwebp -lwebpdemux -lwebpmux -lpng -lz -lfontconfig -lfreetype
+Libs.private:  -lrt -lm -ldl
+Cflags: -I${includedir}
