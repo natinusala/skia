@@ -56,7 +56,7 @@ private:
 
 static GrGLFuncPtr glx_get(void* ctx, const char name[]) {
     // Avoid calling glXGetProcAddress() for EGL procs.
-    // We don't expect it to ever succeed, but somtimes it returns non-null anyway.
+    // We don't expect it to ever succeed, but sometimes it returns non-null anyway.
     if (0 == strncmp(name, "egl", 3)) {
         return nullptr;
     }

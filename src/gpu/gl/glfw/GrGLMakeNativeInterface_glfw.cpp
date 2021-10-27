@@ -13,6 +13,12 @@
 #include <GLFW/glfw3.h>
 
 static GrGLFuncPtr glfw_get(void* ctx, const char name[]) {
+    // Avoid calling glfwGetProcAddress() for EGL procs.
+    // We don't expect it to ever succeed, but sometimes it returns non-null anyway.
+    if (0 == strncmp(name, "egl", 3)) {
+        return nullptr;
+    }
+
     SkASSERT(nullptr == ctx);
     SkASSERT(glfwGetCurrentContext());
     return glfwGetProcAddress(name);
