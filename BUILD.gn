@@ -813,6 +813,8 @@ optional("gpu") {
       libs += [ "EGL" ]
     } else if (skia_use_webgl) {
       sources += [ "src/gpu/gl/webgl/GrGLMakeNativeInterface_webgl.cpp" ]
+    } else if (skia_use_glfw) {
+      sources += [ "src/gpu/gl/glfw/GrGLMakeNativeInterface_glfw.cpp" ]
     } else if (is_linux && skia_use_x11) {
       sources += [ "src/gpu/gl/glx/GrGLMakeNativeInterface_glx.cpp" ]
       # GPU is not linked in, but loaded at runtime
