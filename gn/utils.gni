@@ -107,7 +107,7 @@ skia_utils_sources = [
 
 if (!is_winrt) {
   skia_utils_sources += [
-    "$_src/utils/win/SkWGL.h",
-    "$_src/utils/win/SkWGL_win.cpp",
+    # "$_src/utils/win/SkWGL.h",
+    # "$_src/utils/win/SkWGL_win.cpp",
   ]
 }

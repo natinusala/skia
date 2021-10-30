@@ -1,0 +1,3 @@
+bin\gn gen out\LoftwingDynamic --args="is_official_build=true is_component_build=true clang_win="""C:\Program Files\LLVM""" win_vc="""C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC""" win_sdk="""C:\Program Files (x86)\Windows Kits\10""" skia_use_system_libjpeg_turbo=false skia_use_system_zlib=false skia_use_system_libpng=false skia_use_system_expat=false skia_use_system_icu=false skia_use_system_libwebp=false skia_pdf_subset_harfbuzz=true skia_use_system_harfbuzz=false skia_use_harfbuzz=true target_os="""win""" target_cpu="""x64""" skia_enable_tools=false skia_use_vulkan=true cc="""clang""" cxx="""clang++""" extra_cflags_cc=["""-DSKIA_C_DLL"""] extra_cflags=["""-DSKIA_C_DLL"""]"
+
+..\ninja.exe -C out\LoftwingDynamic -v
