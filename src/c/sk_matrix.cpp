@@ -72,6 +72,10 @@ float sk_matrix_map_radius(sk_matrix_t *matrix, float radius) {
     return AsMatrix(matrix).mapRadius(radius);
 }
 
+void sk_matrix_scale_about_pivot(sk_matrix_t *matrix, sk_matrix_t *result, float sx, float sy, float px, float py) {
+    *result = ToMatrix(AsMatrix(matrix).setScale(sx, sy, px, py));
+}
+
 // 3d view
 
 sk_3dview_t* sk_3dview_new(void) {

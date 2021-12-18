@@ -25,6 +25,7 @@ SK_C_API void sk_matrix_map_vectors (sk_matrix_t *matrix, sk_point_t *dst, sk_po
 SK_C_API void sk_matrix_map_xy (sk_matrix_t *matrix, float x, float y, sk_point_t* result);
 SK_C_API void sk_matrix_map_vector (sk_matrix_t *matrix, float x, float y, sk_point_t* result);
 SK_C_API float sk_matrix_map_radius (sk_matrix_t *matrix, float radius);
+SK_C_API void sk_matrix_scale_about_pivot(sk_matrix_t *matrix, sk_matrix_t *result, float sx, float sy, float px, float py);
 
 
 SK_C_API sk_3dview_t* sk_3dview_new (void);
